@@ -171,6 +171,7 @@ When, prompted, enter 'yes' to confirm the apply.
 * network: the custom network we created above
 * allowed ports: 8080 and 8081
 * a single source range of 0.0.0.0/0  
+
 For guidance, consult the [firewall documentation](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_firewall), and see solution below if required:
 
 ##### Solution 3 - Firewall Config

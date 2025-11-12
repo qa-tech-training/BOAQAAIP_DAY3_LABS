@@ -7,10 +7,10 @@ http {
   server {
     listen 80;
     location /nginx {
-      proxy_pass http://{{ SERVER_IP }}:8080;
+      proxy_pass http://{{ SERVER_IP }}:8080/;
     }
     location /apache {
-      proxy_pass http://{{ SERVER_IP }}:8081;
+      proxy_pass http://{{ SERVER_IP }}:8081/;
     }
   }
 }

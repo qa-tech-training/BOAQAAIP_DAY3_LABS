@@ -127,7 +127,8 @@ resource "google_compute_instance" "vm1" {
 terraform plan
 terraform apply
 ```
-Enter 'yes' to confirm the apply when prompted.
+Enter 'yes' to confirm the apply when prompted.  
+
 6. Once the apply is complete, navigate to the compute engine > VM instances - you should see a new VM instance.
 7. Review the newly-created _terraform.tfstate_ file - this is how Terraform tracks the resources that it is managing.
 8. Destroy the VM: `terraform destroy` (entering 'yes' to confirm destruction when prompted)

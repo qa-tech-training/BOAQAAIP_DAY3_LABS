@@ -86,13 +86,15 @@ see the [google provider documentation](https://registry.terraform.io/providers/
 terraform init
 ```
 At this point, Terraform will install the provider, as well as initialising a few other things, some of which we will see later
-4. Review the [documentation](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance) for the google_compute_instance resource type. Add, to the instance.tf file, a block defining a VM with the following configuration (see solution below if needed):
+4. Review the [documentation](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance) for the google_compute_instance resource type. Add, to the instance.tf file, a block defining a VM with the following configuration:
 * name: demo-instance-1
 * machine type: e2-medium
 * zone: us-east1-b
 * boot disk image: debian 12
 * network: default
 * network access tier: standard
+
+See the solution below if needed.
 
 ##### Solution 1 - Compute Instance
 ```terraform
@@ -142,6 +144,7 @@ Enter 'yes' to confirm the apply when prompted.
 For guidance, consult the following documentation:
 * [network](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_network)
 * [subnet](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_subnetwork)  
+
 And see the solution below if needed
 
 ##### Solution 2 - Network Configuration

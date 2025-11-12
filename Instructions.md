@@ -138,7 +138,7 @@ Enter 'yes' to confirm the apply when prompted.
 * a custom subnetwork for the custom network with the following configuration:
   * name: custom-subnet
   * ip cidr range: 10.0.1.0/24
-  * region: us-east1
+  * region: us-east1  
 For guidance, consult the following documentation:
 * [network](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_network)
 * [subnet](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_subnetwork)
@@ -170,7 +170,7 @@ When, prompted, enter 'yes' to confirm the apply.
 * name: custom firewall
 * network: the custom network we created above
 * allowed ports: 8080 and 8081
-* a single source range of 0.0.0.0/0
+* a single source range of 0.0.0.0/0  
 For guidance, consult the [firewall documentation](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_firewall), and see solution below if required:
 
 ##### Solution 3 - Firewall Config

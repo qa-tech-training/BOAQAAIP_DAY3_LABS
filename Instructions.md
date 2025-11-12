@@ -200,7 +200,7 @@ terraform apply
 ##### Deploy the VM
 15. Finally, we will deploy a VM into the custom network we have created. Uncomment the contents of instance.tf and make the following change on line 15:
 ```terraform
-    network = google_compute_network.lab-vpc.name
+    subnetwork = google_compute_subnetwork.lab-subnet.name
 ```
 Perform another plan and apply:
 ```shell

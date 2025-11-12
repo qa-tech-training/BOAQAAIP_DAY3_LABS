@@ -142,6 +142,7 @@ Enter 'yes' to confirm the apply when prompted.
   * name: custom-subnet
   * ip cidr range: 10.0.1.0/24
   * region: us-east1  
+
 For guidance, consult the following documentation:
 * [network](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_network)
 * [subnet](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_subnetwork)  
@@ -158,7 +159,7 @@ resource "google_compute_network" "lab-vpc" {
 resource "google_compute_subnetwork" "lab-subnet" {
   name          = "custom-subnet"
   ip_cidr_range = "10.0.1.0/24"
-  region        = us-east1
+  region        = "us-east1"
   network       = google_compute_network.lab-vpc.id
 }
 ```

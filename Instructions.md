@@ -814,12 +814,13 @@ ansible-inventory -i inventory.gcp_compute.yml --list
 [ssh_connection]
   ssh_args="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 ```
-This defines the user and keyfile that were previously set in inventory.yml, and also disables host key checking. 
+This defines the user and keyfile that were previously set in inventory.yml, and also disables host key checking.  
+
 14. You can now use the dynamic inventory to run the same playbook as before against the new hosts:
 ```bash
 ansible-playbook -i inventory.gcp_compute.yml test_playbook.yml
 ```
-15. Once you have confirmed connectivity with the dynamic inventory, use this same inventory to execute the original playbook. Test that NGINX has been successfully installed using curl.
+15. As before, test that NGINX has been successfully installed using curl.
 
 ##### Clean Up
 16. Destroy the resources you have created:
@@ -953,7 +954,7 @@ Now the repository and the install directory are parameterised, we could potenti
 ```conf
         root {{ install_dir }}; # <- add the template expression here
 ```
-Ansible templates will be rendered by the _Jinja2_ templating engine prior to transfer to the host, allowing for injection of dynamic parameters. The server config is a fairly simple template, referencing the same install_dir variable as in the playbook. We can also use templates to improve the proxy config. 
+Ansible templates will be rendered by the _Jinja2_ templating engine prior to transfer to the host, allowing for injection of dynamic parameters. The server config is a fairly simple template, referencing the same install_dir variable as in the playbook. We can also use templates to improve the proxy config.  
 
 11. Replace the contents of nginx-proxy.conf with the following:
 ```conf
@@ -1045,7 +1046,7 @@ ansible-galaxy init common
 ansible-galaxy init appserver
 ansible-galaxy init proxy
 ```
-A role defines a collection of tasks, templates, variables and other data which can then by used within a playbook without having to duplicate the config. We will configure the three roles to hold most of our configuration.
+A role defines a collection of tasks, templates, variables and other data which can then by used within a playbook without having to duplicate the config. We will configure the three roles to hold most of our configuration.  
 
 18. Backup your existing playbook, for comparison later:
 ```bash

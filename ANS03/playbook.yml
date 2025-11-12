@@ -1,0 +1,41 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Install NGINX
+    apt:
+      pkg: 
+      - nginx
+      - git
+      state: latest
+      update_cache: true
+  - name: Start NGINX Service
+    service:
+      name: nginx
+      state: started
+- hosts: gcp_role_appserver
+  become: true
+  tasks:
+  - name: 'update website from the git repository'
+    git:
+      repo: "https://gitlab.com/qacdevops/static-website-example"
+      dest: "/opt/static-website-example"
+  - name: 'install the nginx.conf file on to the remote machine'
+    copy:
+      src: nginx-server.conf
+      dest: /etc/nginx/nginx.conf
+  - name: Restart NGINX Service
+    service:
+      name: nginx
+      state: restarted
+- hosts: gcp_role_proxy
+  become: true
+  tasks:
+  - name: transfer_nginx_conf
+    copy:
+      src: nginx-proxy.conf
+      dest: /etc/nginx/nginx.conf
+  - name: Restart NGINX Service
+    service:
+      name: nginx
+      state: restarted

@@ -1,0 +1,10 @@
+all:
+  children:
+    test:
+      hosts:
+        IP_OF_HOST_1: # replace 
+        IP_OF_HOST_2: # replace
+        IP_OF_HOST_3: # replace
+      vars:
+        ansible_user: ansible
+        ansible_ssh_private_key_file: '~/ansible_key'

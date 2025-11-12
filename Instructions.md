@@ -141,7 +141,7 @@ Enter 'yes' to confirm the apply when prompted.
   * region: us-east1  
 For guidance, consult the following documentation:
 * [network](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_network)
-* [subnet](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_subnetwork)
+* [subnet](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_subnetwork)  
 And see the solution below if needed
 
 ##### Solution 2 - Network Configuration

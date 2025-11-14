@@ -800,7 +800,7 @@ sudo apt-get install python3-google-auth
 * The inventory file currently holds a placeholder for the project - we can fill this in using the ansible _template_ module:
 ```bash
 cd ~/Labs3/ANS02
-ansible 127.0.0.1 -m template -a "src=$(pwd)inventory.gcp_compute.template.yml dest=$(pwd)inventory.gcp_compute.yml" -e "GCP_PROJECT=$TF_VAR_gcp_project"
+ansible 127.0.0.1 -m template -a "src=$(pwd)/inventory.gcp_compute.template.yml dest=$(pwd)/inventory.gcp_compute.yml" -e "GCP_PROJECT=$TF_VAR_gcp_project"
 ```
 
 12. Verify that the new inventory can detect the new hosts:
@@ -912,7 +912,7 @@ The logic here is:
 4. Next, render inventory.gcp_compute.template.yml to fill in your project ID
 ```bash
 cd ~/Labs3/ANS03
-ansible 127.0.0.1 -m template -a "src=$(pwd)inventory.gcp_compute.template.yml dest=$(pwd)inventory.gcp_compute.yml" -e "GCP_PROJECT=$TF_VAR_gcp_project"
+ansible 127.0.0.1 -m template -a "src=$(pwd)/inventory.gcp_compute.template.yml dest=$(pwd)/inventory.gcp_compute.yml" -e "GCP_PROJECT=$TF_VAR_gcp_project"
 ```
 5. Now edit lines 5 and 6 in the nginx-proxy.conf file and add the server IP addresses you noted earlier (Note: be careful to use the server IPs, NOT the proxy IP):
 ```conf
